@@ -24,12 +24,12 @@ fstatus = False
 foundDir = []
 dirs = []
 
-try:
-    if sys.argv[1] == "-h" or sys.argv[1] == "--help":
-        Help()
-        exit()
-except IndexError:
+if len(sys.argv) < 2:
     print(colored("[!]","red"),"Missing arguments")
+    exit()
+
+if sys.argv[1] == "-h" or sys.argv[1] == "--help":
+    Help()
     exit()
 
 arguments = GetArgs()
